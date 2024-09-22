@@ -1,6 +1,7 @@
 using Coravel;
 using Serilog;
 using Serilog.Sinks.MSSqlServer;
+using System.Diagnostics;
 
 namespace WorkerServiceBcp
 {
@@ -23,13 +24,19 @@ namespace WorkerServiceBcp
                 .Enrich.FromLogContext()
                 .CreateLogger();
 
+            Serilog.Debugging.SelfLog.Enable(msg =>
+            {
+                Debug.Print(msg);
+                Debugger.Break();
+            });
+
             try
             {
                 var separator = new string('-', 30);
                 Log.Information($"{separator} Starting host {separator}");
 
                 var builder = Host.CreateApplicationBuilder(args);
-                builder.Services.AddHostedService<Worker>();
+                //builder.Services.AddHostedService<Worker>();
                 builder.Services.AddTransient<SchedualWork>();
                 builder.Services.AddScheduler();
                 builder.Services.AddSerilog();

@@ -36,12 +36,12 @@ namespace WorkerServiceBcp
 
             //foreach (string tbname in tableNames)
             //{
-            //    // 產生bcp
-            //    string cmd1 = $"/c bcp CopyNothwind.dbo.{tbname} out {Path.Combine(dataPath, tbname)}.bcp -S {source} -U {U} -P {P} -c";
-            //    cmd1.Excute("cmd.exe");
-            //    // 產生format
-            //    string cmd2 = $"/c bcp YuDB.dbo.{tbname} format nul -f {Path.Combine(format, tbname)}.fmt -S {source} -U {U} -P {P} -c";
-            //    cmd2.Excute("cmd.exe");
+            //    //// 產生bcp
+            //    //string cmd1 = $"/c bcp CopyNothwind.dbo.{tbname} out {Path.Combine(dataPath, tbname)}.bcp -S {source} -U {U} -P {P} -c";
+            //    //cmd1.Excute("cmd.exe");
+            //    //// 產生format
+            //    //string cmd2 = $"/c bcp YuDB.dbo.{tbname} format nul -f {Path.Combine(format, tbname)}.fmt -S {source} -U {U} -P {P} -c";
+            //    //cmd2.Excute("cmd.exe");
             //    // 寫入db
             //    string cmd3 = $"/c bcp YuDB.dbo.{tbname} in {Path.Combine(dataPath, tbname)}.bcp -f {Path.Combine(format, tbname)}.fmt -S {source} -U {U} -P {P}";
             //    cmd3.Excute("cmd.exe");
@@ -51,12 +51,12 @@ namespace WorkerServiceBcp
             {
                 try
                 {
-                    // 產生bcp
-                    string cmd1 = $"/c bcp CopyNothwind.dbo.{tbname} out {Path.Combine(dataPath, tbname)}.bcp -S {source} -U {U} -P {P} -c";
-                    cmd1.Excute("cmd.exe");
-                    // 產生format
-                    string cmd2 = $"/c bcp YuDB.dbo.{tbname} format nul -f {Path.Combine(format, tbname)}.fmt -S {source} -U {U} -P {P} -c";
-                    cmd2.Excute("cmd.exe");
+                    //// 產生bcp
+                    //string cmd1 = $"/c bcp CopyNothwind.dbo.{tbname} out {Path.Combine(dataPath, tbname)}.bcp -S {source} -U {U} -P {P} -c";
+                    //cmd1.Excute("cmd.exe");
+                    //// 產生format
+                    //string cmd2 = $"/c bcp YuDB.dbo.{tbname} format nul -f {Path.Combine(format, tbname)}.fmt -S {source} -U {U} -P {P} -c";
+                    //cmd2.Excute("cmd.exe");
                     // 寫入db
                     string cmd3 = $"/c bcp YuDB.dbo.{tbname} in {Path.Combine(dataPath, tbname)}.bcp -f {Path.Combine(format, tbname)}.fmt -S {source} -U {U} -P {P}";
                     cmd3.Excute("cmd.exe");
